@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traversy Media Quick Launcher</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Modal Structure */
+
+      html,
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        margin: 0;
+        min-height: 180px;
+        padding: 0;
+        width: 340px;
+        background-color: #22272e;
+      }
+
+      h1 {
+        font-family: "Menlo", monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        color: #cdd9e5;
+      }
+
+      a:link,
+      a:visited {
+        color: #444c56;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .modal-header {
+        align-items: center;
+        width: 340px;
+        border-bottom: 0.5px solid #444c56;
+      }
+
+      .modal-content {
+        padding: 0 22px;
+      }
+
+      .modal-icons {
+        border-top: 0.5px solid #444c56;
+        height: 50px;
+        width: 100%;
+      }
+
+      .logo {
+        padding: 16px;
+      }
+
+      .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 12px;
+      }
+
+      .version {
+        color: #444c56;
+        font-size: 18px;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 22px;
+      }
+
+      .flex {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        width: 120px;
+      }
+
+      .flex:hover {
+        opacity: 0.4;
+      }
+
+      .flex .fa {
+        font-size: 40px;
+        color: #0f2d5c;
+      }
+      /* .second {
+        opacity:0 ;
+      } */
+      .form {
+        color: white;
+        display: block;
+      }
+
+      form {
+        /* Center the form on the page */
+        margin: 0 3px;
+        width: 400px;
+        display: none;
+        /* Form outline */
+        /* padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em; */
+
+      }
+
+      ul {
+        list-style: none;
+        padding:0;
+        margin:0;
+      }
+
+       form li + li {
+        margin-top: 1em;
+      }
+
+      label {
+        /* Uniform size & alignment */
+        display: inline-block;
+        width: 80px;
+        text-align: right;
+      }
+
+      input,
+      textarea {
+        /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+        font: 1em sans-serif;
+
+        /* Uniform text field size */
+        width: 250px;
+        box-sizing: border-box;
+
+        /* Match form field borders */
+        border: 1px solid #999;
+      }
+
+      input:focus,
+      textarea:focus {
+        /* Additional highlight for focused elements */
+        border-color: #000;
+      }
+
+      textarea {
+        /* Align multiline text fields with their labels */
+        vertical-align: top;
+
+        /* Provide space to type some text */
+        height: 5em;
+      }
+
+      .button {
+        /* Align buttons with the text fields */
+        padding-left: 90px; /* same size as the label elements */
+      }
+
+      button {
+        /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+        margin-left: 0.5em;
+      }
+
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <!-- action="/my-handling-form-page" -->
+  <body>
+    <form  style="color:white;">
+      <ul>
+        <li class="li">
+          <label for="name">Website</label>
+          <input type="url"/>
+          <button class="remove" style="width: 25px; height: 23px;" type="button" onclick="return this.parentNode.remove();" class="remove">X</button>
+
+        </li>
+        <li class="li">
+          <label for="mail">YouTube</label>
+          <input type="url"/>
+          <button class="remove" style="width: 25px; height: 23px;" type="button" onclick="return this.parentNode.remove();" class="remove">X</button>
+
+        </li>
+        <li class="li">
+          <label for="msg">Instagram</label>
+          <input type="url"></input>
+          <button class="remove" style="width: 25px; height: 23px;" type="button" onclick="return this.parentNode.remove();" class="remove">X</button>
+
+        </li>
+        <li class="li">
+          <label for="msg">Github</label>
+          <input type="url"></input>
+          <button class="remove" style="width: 25px; height: 23px;" type="button" onclick="return this.parentNode.remove();" class="remove">X</button>
+
+        </li>
+        <!-- <li style="display: flex; padding-left: 10px; ">
+          <input style="width: 80px; height: 23px; font: 1em sans-serif; box-sizing: border-box; border: 1px solid #999;" type="text" id="lname" name="lname" value="Name" /><br /><br />
+          <input style="width: 235px; height: 23px; " type="text" id="lname" name="lname" value="Link Comes here" /><br /><br />
+
+        </li> -->
+
+
+          <li class="button">
+            <button id ="button1" type="button">Add Links</button>
+            <button id ="button2" type="button">Add More Links</button>
+          </li>
+
+      </ul>
+    </form>
+    <!--
+    <div class="form">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+      <div>
+        <label for="homepage">Add Website Link: </label>
+        <input class="id1" type="url" />
+        <button class="ok">OK</button> <br />
+        <br />
+      </div>
+      <div>
+        <label for="homepage">Add YouTube Link : </label>
+        <input class="id1" type="url" />
+        <button class="ok">OK</button><br />
+        <br />
+      </div>
+      <div>
+        <label for="homepage">Add Instagram Link :</label>
+        <input class="id1" type="url" />
+        <button class="ok">OK</button><br />
+        <br />
+      </div>
+      <div>
+        <label for="homepage">Add Github Link </label>
+        <input class="id1" type="url" />
+        <button class="ok">OK</button><br />
+        <br />
+      </div>
+      <div>
+        <label for="homepage">Add your Website : </label>
+        <input class="id1" type="url" />
+        <button class="ok">OK</button><br />
+        <br />
+      </div>
+    </div>
+    -->
+
+    <div class="second">
+      <div class="modal-header">
+        <h1 class="logo">
+          <img class="logo-icon" src="images/logo.png" />A Launcher
+          <span class="version">(1.0.0)</span>
+        </h1>
+      </div>
+      <div class="modal-content" style="color: #cdd9e5">
+        <p>Easily Access your content</p>
+      </div>
+      <div class="modal-icons">
+        <div class="flex-container">
+          <div class="flex">
+            <a href="https://portfolioayush.herokuapp.com/" target="_blank">
+              <i class="fa fa-globe" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+          <div class="flex">
+            <a href="https://portfolioayush.herokuapp.com/blog" target="_blank">
+              <i class="fa fa-book" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+          <div class="flex">
+            <a href="https://www.youtube.com/" target="_blank">
+              <i class="fa fa-youtube" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+          <div class="flex">
+            <a href="https://www.instagram.com/ayuarts_01/" target="_blank">
+              <i class="fa fa-instagram" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+          <div class="flex">
+            <a href="https://www.linkedin.com/in/ayush-singh-601951188/" target="_blank">
+              <i class="fa fa-linkedin" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+          <div class="flex">
+            <a href="https://github.com/ayush52056" target="_blank">
+              <i class="fa fa-github" style="color: #cdd9e5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
